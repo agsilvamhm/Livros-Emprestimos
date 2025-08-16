@@ -21,6 +21,39 @@ API RESTful para o gerenciamento de uma biblioteca, permitindo o cadastro de liv
 - **Banco de Dados:** H2 (para desenvolvimento) / PostgreSQL (para produção)
 - **Build:** Maven
 
+## Diagrama de classe
+
+```mermaid
+classDiagram
+  direction LR
+
+  class Usuario {
+    -String nome
+    -String email
+  }
+
+  class Livro {
+    -String isbn
+    -String titulo
+    -String autor
+    -Integer estoque
+    -Boolean ativo 
+  }
+  
+  class Emprestimo {
+    -Livro livro
+    -Usuario usuario
+    -LocalDateTime retiradoEm
+    -LocalDateTime devolucaoPrevista
+    -LocalDateTime devolvidoEm 
+  }
+
+  Emprestimo "1" -- "1" Usuario : possui
+  Emprestimo "1" -- "1" Livro 
+  
+```
+
+
 ## Modelo de Dados
 
 O sistema é composto por três entidades principais:

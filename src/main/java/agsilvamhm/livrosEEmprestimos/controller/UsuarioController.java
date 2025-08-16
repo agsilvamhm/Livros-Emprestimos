@@ -2,6 +2,7 @@ package agsilvamhm.livrosEEmprestimos.controller;
 
 import agsilvamhm.livrosEEmprestimos.model.Usuario;
 import agsilvamhm.livrosEEmprestimos.service.UsuarioService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,7 +15,7 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @PostMapping("/usuario")
-    public Usuario novoUsuario(@RequestBody Usuario usuario) {
+    public Usuario novoUsuario(@Valid @RequestBody Usuario usuario) {
         return usuarioService.save(usuario);
     }
 }
