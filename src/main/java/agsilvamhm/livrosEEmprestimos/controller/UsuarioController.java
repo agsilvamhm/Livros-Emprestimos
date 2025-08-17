@@ -14,7 +14,7 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
-    @PostMapping("/usuario")
+    @PostMapping("/usuarios")
     public Usuario novoUsuario(@Valid @RequestBody Usuario usuario) {
         return usuarioService.save(usuario);
     }

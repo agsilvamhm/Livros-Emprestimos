@@ -1,8 +1,10 @@
 package agsilvamhm.livrosEEmprestimos.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Entity
 public class Emprestimo {
@@ -15,7 +17,9 @@ public class Emprestimo {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
+    @NotNull
     private LocalDateTime retiradoEm;
+    @NotNull
     private LocalDateTime devolucaoPrevista;
     private LocalDateTime devolvidoEm;
 

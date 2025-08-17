@@ -1,18 +1,27 @@
 package agsilvamhm.livrosEEmprestimos.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Livro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank(message = "O ISBN não pode ser vazio ou nulo.")
     @Column(name = "isbn", unique = true, nullable = false, length = 20)
     private String isbn;
+    @NotBlank(message = "O título não pode ser vazio ou nulo.")
     private String titulo;
+    @NotBlank(message = "O autor não pode ser vazio ou nulo.")
     private String autor;
+    @NotNull(message = "O estoque não pode ser nulo.")
+    @Min(value = 0, message = "O estoque não pode ser negativo.")
     private Integer estoque;
-    private Boolean ativo;
+    @NotNull
+    private Boolean ativo = true;
 
     public Long getId() {
         return id;

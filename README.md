@@ -49,10 +49,8 @@ classDiagram
   }
 
   Emprestimo "1" -- "1" Usuario : possui
-  Emprestimo "1" -- "1" Livro 
-  
+  Emprestimo "1" -- "1" Livro   : possui   
 ```
-
 
 ## Modelo de Dados
 
