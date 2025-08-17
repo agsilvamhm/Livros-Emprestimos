@@ -160,10 +160,12 @@ A seguir, a documentação dos endpoints da API.
     - **Descrição:** Cria um novo empréstimo, aplicando as regras de negócio.
     - **Request Body:**
       ```json
-      {
+    {
+        "usuarioId": 1,
         "livroId": 1,
-        "usuarioId": 1
-      }
+        "retiradoEm": "2025-08-17T15:00:00",
+        "devolucaoPrevista": "2025-08-24T15:00:00"
+    }
       ```
     - **Resposta (Sucesso):** `201 Created` com os detalhes do empréstimo.
 
