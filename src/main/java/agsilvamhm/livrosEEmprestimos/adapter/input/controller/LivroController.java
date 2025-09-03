@@ -1,7 +1,7 @@
-package agsilvamhm.livrosEEmprestimos.controller;
+package agsilvamhm.livrosEEmprestimos.adapter.input.controller;
 
-import agsilvamhm.livrosEEmprestimos.model.Livro;
-import agsilvamhm.livrosEEmprestimos.service.LivroService;
+import agsilvamhm.livrosEEmprestimos.core.domain.model.Livro;
+import agsilvamhm.livrosEEmprestimos.core.usecase.LivroCase;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class LivroController {
 
     @Autowired
-    private LivroService livroService;
+    private LivroCase livroService;
 
     @PostMapping("/livros")
     public Livro novoLivro(@Valid @RequestBody Livro livro){

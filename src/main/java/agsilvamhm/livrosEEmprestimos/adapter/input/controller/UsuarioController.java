@@ -1,29 +1,32 @@
-package agsilvamhm.livrosEEmprestimos.controller;
+package agsilvamhm.livrosEEmprestimos.adapter.input.controller;
 
-import agsilvamhm.livrosEEmprestimos.model.Usuario;
-import agsilvamhm.livrosEEmprestimos.service.UsuarioService;
+import agsilvamhm.livrosEEmprestimos.core.domain.model.Usuario;
+import agsilvamhm.livrosEEmprestimos.core.usecase.UsuarioCase;
+import agsilvamhm.livrosEEmprestimos.port.input.UsuarioInputPort;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/v1/usuarios")
 public class UsuarioController {
 
-    private final UsuarioService usuarioService;
+    @Autowired
+    private UsuarioInputPort usuarioInputPort;
 
-    public UsuarioController(UsuarioService usuarioService){
-        this.usuarioService = usuarioService;
-    }
+  //  public UsuarioController(UsuarioCase usuarioService){
+  //      this.usuarioService = usuarioService;
+  //  }
 
     @PostMapping
+ //   @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Usuario> create(@Valid @RequestBody Usuario usuario) {
         Usuario novoUsuario = usuarioService.save(usuario);
 
@@ -34,7 +37,7 @@ public class UsuarioController {
                 .toUri();
         return ResponseEntity.created(location).body(novoUsuario);
     }
-
+/*
     @GetMapping("/{id}")
     public ResponseEntity<Usuario> findById(@PathVariable Long id){
         Usuario usuario = usuarioService.findById(id);
@@ -58,12 +61,8 @@ public class UsuarioController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id){
-        try {
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Long id){
             usuarioService.deleteById(id);
-             return ResponseEntity.noContent().build();
-        } catch (EntityNotFoundException e) {
-             return ResponseEntity.notFound().build();
-        }
-    }
+    }*/
 }

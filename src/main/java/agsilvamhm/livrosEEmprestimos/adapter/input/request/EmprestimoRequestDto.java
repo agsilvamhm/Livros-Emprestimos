@@ -1,4 +1,4 @@
-package agsilvamhm.livrosEEmprestimos.dto.request;
+package agsilvamhm.livrosEEmprestimos.adapter.input.request;
 
 import java.time.LocalDateTime;
 

@@ -1,12 +1,12 @@
-package agsilvamhm.livrosEEmprestimos.service;
+package agsilvamhm.livrosEEmprestimos.core.usecase;
 
-import agsilvamhm.livrosEEmprestimos.dto.request.EmprestimoRequestDto;
-import agsilvamhm.livrosEEmprestimos.model.Emprestimo;
-import agsilvamhm.livrosEEmprestimos.model.Livro;
-import agsilvamhm.livrosEEmprestimos.model.Usuario;
-import agsilvamhm.livrosEEmprestimos.repository.EmprestimoRepository;
-import agsilvamhm.livrosEEmprestimos.repository.LivroRepository;
-import agsilvamhm.livrosEEmprestimos.repository.UsuarioRepository;
+import agsilvamhm.livrosEEmprestimos.adapter.input.request.EmprestimoRequestDto;
+import agsilvamhm.livrosEEmprestimos.core.domain.model.Emprestimo;
+import agsilvamhm.livrosEEmprestimos.core.domain.model.Livro;
+import agsilvamhm.livrosEEmprestimos.core.domain.model.Usuario;
+import agsilvamhm.livrosEEmprestimos.adapter.output.repository.EmprestimoRepository;
+import agsilvamhm.livrosEEmprestimos.adapter.output.repository.LivroRepository;
+import agsilvamhm.livrosEEmprestimos.adapter.output.repository.UsuarioEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
-public class EmprestimoService {
+public class EmprestimoCase {
 
     @Autowired
     private EmprestimoRepository emprestimoRepository;
@@ -23,7 +23,7 @@ public class EmprestimoService {
     private LivroRepository livroRepository;
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private UsuarioEntity usuarioRepository;
 
     public Emprestimo save(EmprestimoRequestDto dto){
         LocalDateTime dataAtual = LocalDateTime.now();

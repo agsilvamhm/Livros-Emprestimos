@@ -1,10 +1,9 @@
-package agsilvamhm.livrosEEmprestimos.model;
+package agsilvamhm.livrosEEmprestimos.core.domain.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 @Entity
 public class Emprestimo {

@@ -1,12 +1,12 @@
-package agsilvamhm.livrosEEmprestimos.service;
+package agsilvamhm.livrosEEmprestimos.core.usecase;
 
-import agsilvamhm.livrosEEmprestimos.model.Livro;
-import agsilvamhm.livrosEEmprestimos.repository.LivroRepository;
+import agsilvamhm.livrosEEmprestimos.core.domain.model.Livro;
+import agsilvamhm.livrosEEmprestimos.adapter.output.repository.LivroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class LivroService {
+public class LivroCase {
 
     @Autowired
     private LivroRepository livroRepository;

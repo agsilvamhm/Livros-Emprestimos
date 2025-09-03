@@ -208,3 +208,5 @@ A seguir, a documentação dos endpoints da API.
     ```
 
 A aplicação estará disponível em `http://localhost:8080`.
+
+Web Aula de sábado 23/08 (03:00)

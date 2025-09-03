@@ -1,6 +1,6 @@
-package agsilvamhm.livrosEEmprestimos.repository;
+package agsilvamhm.livrosEEmprestimos.adapter.output.repository;
 
-import agsilvamhm.livrosEEmprestimos.model.Emprestimo;
+import agsilvamhm.livrosEEmprestimos.core.domain.model.Emprestimo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EmprestimoRepository extends JpaRepository<Emprestimo, Long> {

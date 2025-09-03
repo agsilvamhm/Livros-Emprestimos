@@ -1,4 +1,4 @@
-package agsilvamhm.livrosEEmprestimos.model;
+package agsilvamhm.livrosEEmprestimos.core.domain.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;

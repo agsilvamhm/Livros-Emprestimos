@@ -1,8 +1,8 @@
-package agsilvamhm.livrosEEmprestimos.controller;
+package agsilvamhm.livrosEEmprestimos.adapter.input.controller;
 
-import agsilvamhm.livrosEEmprestimos.dto.request.EmprestimoRequestDto;
-import agsilvamhm.livrosEEmprestimos.model.Emprestimo;
-import agsilvamhm.livrosEEmprestimos.service.EmprestimoService;
+import agsilvamhm.livrosEEmprestimos.adapter.input.request.EmprestimoRequestDto;
+import agsilvamhm.livrosEEmprestimos.core.domain.model.Emprestimo;
+import agsilvamhm.livrosEEmprestimos.core.usecase.EmprestimoCase;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class EmprestimoController {
 
     @Autowired
-    private EmprestimoService emprestimoService;
+    private EmprestimoCase emprestimoService;
 
     @PostMapping("/emprestimos")
     public Emprestimo novoEmprestimo(@Valid @RequestBody EmprestimoRequestDto dto){
